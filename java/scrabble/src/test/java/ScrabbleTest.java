@@ -24,4 +24,11 @@ public class ScrabbleTest {
     assertEquals(six, scrabbleTest.scrabble("bod"));
   }
 
+  @Test
+  public void scrabble_LettersFHVWY_ValueOf4() {
+    Scrabble scrabbleTest = new Scrabble();
+    Integer seven = 7;
+    assertEquals(seven, scrabbleTest.scrabble("fod"));
+  }
+
 }
