@@ -10,4 +10,11 @@ public class ScrabbleTest {
     assertEquals(three, scrabbleTest.scrabble("out"));
   }
 
+  @Test
+  public void scrabble_LettersDandG_ValueOf2() {
+    Scrabble scrabbleTest = new Scrabble();
+    Integer four = 4;
+    assertEquals(four, scrabbleTest.scrabble("dog"));
+  }
+
 }
