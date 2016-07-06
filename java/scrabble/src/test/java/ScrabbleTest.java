@@ -32,7 +32,7 @@ public class ScrabbleTest {
   }
 
   @Test
-  public void scrabble_LettersFHVWY_ValueOf4() {
+  public void scrabble_LetterK_ValueOf5() {
     Scrabble scrabbleTest = new Scrabble();
     Integer eight = 8;
     assertEquals(eight, scrabbleTest.scrabble("korn"));

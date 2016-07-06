@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ScrabbleTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-07-06T04:14:09" hostname="Matthews-MBP-2.att.net" time="0.003">
+<testsuite name="ScrabbleTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-07-06T04:18:13" hostname="Matthews-MBP-2.att.net" time="0.004">
   <properties/>
-  <testcase name="scrabble_LetterValueOf1_ValueOfOne" classname="ScrabbleTest" time="0.001"/>
+  <testcase name="scrabble_LettersAEIOULNRST_ValueOfOne" classname="ScrabbleTest" time="0.002"/>
   <testcase name="scrabble_LettersFHVWY_ValueOf4" classname="ScrabbleTest" time="0.0"/>
+  <testcase name="scrabble_LetterK_ValueOf5" classname="ScrabbleTest" time="0.0"/>
   <testcase name="scrabble_LettersBCMP_ValueOf3" classname="ScrabbleTest" time="0.0"/>
   <testcase name="scrabble_LettersDandG_ValueOf2" classname="ScrabbleTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
