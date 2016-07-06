@@ -45,4 +45,11 @@ public class ScrabbleTest {
     assertEquals(twelve, scrabbleTest.scrabble("jam"));
   }
 
+  @Test
+  public void scrabble_LettersQZ_ValueOf10() {
+    Scrabble scrabbleTest = new Scrabble();
+    Integer twelve = 12;
+    assertEquals(twelve, scrabbleTest.scrabble("zoo"));
+  }
+
 }
