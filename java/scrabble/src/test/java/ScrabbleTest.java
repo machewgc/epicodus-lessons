@@ -14,7 +14,7 @@ public class ScrabbleTest {
   public void scrabble_LettersDandG_ValueOf2() {
     Scrabble scrabbleTest = new Scrabble();
     Integer four = 4;
-    assertEquals(four, scrabbleTest.scrabble("dog"));
+    assertEquals(four, scrabbleTest.scrabble("doo"));
   }
 
 }
