@@ -38,4 +38,11 @@ public class ScrabbleTest {
     assertEquals(eight, scrabbleTest.scrabble("korn"));
   }
 
+  @Test
+  public void scrabble_LettersJX_ValueOf8() {
+    Scrabble scrabbleTest = new Scrabble();
+    Integer twelve = 12;
+    assertEquals(twelve, scrabbleTest.scrabble("jam"));
+  }
+
 }
