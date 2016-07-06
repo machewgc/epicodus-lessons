@@ -9,7 +9,9 @@ public class Scrabble {
     char[] charsInput= stringInput.toCharArray();
     Integer score = 0;
     for (Integer i = 0; i < stringInput.length(); i++) {
-      if (Pattern.matches("[bcmp]", Character.toString(charsInput[i]))) {
+      if (Pattern.matches("[fhvwy]", Character.toString(charsInput[i]))) {
+        score += 4;
+      } else if (Pattern.matches("[bcmp]", Character.toString(charsInput[i]))) {
         score += 3;
       } else if (Pattern.matches("[gd]", Character.toString(charsInput[i]))) {
         score += 2;
