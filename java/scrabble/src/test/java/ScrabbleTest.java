@@ -18,7 +18,7 @@ public class ScrabbleTest {
   }
 
   @Test
-  public void scrabble_LettersDandG_ValueOf2() {
+  public void scrabble_LettersBCMP_ValueOf3() {
     Scrabble scrabbleTest = new Scrabble();
     Integer six = 6;
     assertEquals(six, scrabbleTest.scrabble("bod"));
