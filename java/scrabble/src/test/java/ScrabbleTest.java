@@ -17,4 +17,11 @@ public class ScrabbleTest {
     assertEquals(four, scrabbleTest.scrabble("doo"));
   }
 
+  @Test
+  public void scrabble_LettersDandG_ValueOf2() {
+    Scrabble scrabbleTest = new Scrabble();
+    Integer six = 6;
+    assertEquals(six, scrabbleTest.scrabble("bod"));
+  }
+
 }
