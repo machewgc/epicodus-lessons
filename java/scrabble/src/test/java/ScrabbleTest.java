@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 public class ScrabbleTest {
 
   @Test
-  public void scrabble_LetterValueOf1_ValueOfOne() {
+  public void scrabble_LettersAEIOULNRST_ValueOfOne() {
     Scrabble scrabbleTest = new Scrabble();
     Integer three = 3;
     assertEquals(three, scrabbleTest.scrabble("out"));
@@ -29,6 +29,13 @@ public class ScrabbleTest {
     Scrabble scrabbleTest = new Scrabble();
     Integer seven = 7;
     assertEquals(seven, scrabbleTest.scrabble("fod"));
+  }
+
+  @Test
+  public void scrabble_LettersFHVWY_ValueOf4() {
+    Scrabble scrabbleTest = new Scrabble();
+    Integer eight = 8;
+    assertEquals(eight, scrabbleTest.scrabble("korn"));
   }
 
 }
