@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NumbersToWordsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-07T01:41:14" hostname="Matthews-MBP-2.att.net" time="0.002">
+<testsuite name="NumbersToWordsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-07-07T02:21:07" hostname="Matthews-MBP-2.att.net" time="0.003">
   <properties/>
   <testcase name="numbersToWords_NumberLessThan20_SingleCorrespondingWord" classname="NumbersToWordsTest" time="0.002"/>
+  <testcase name="numbersToWords_Numbers20_30_40_50_60_70_80_90_SingleCorrespondingWord" classname="NumbersToWordsTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
