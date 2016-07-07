@@ -48,7 +48,7 @@ public class NumbersToWordsTest {
   @Test
   public void numbersToWords_NumbersOver1000000000_NumberOfBillions() {
     NumbersToWords numbersToWordsTest = new NumbersToWords();
-    assertEquals("one billion", numbersToWordsTest.numbersToWords(1000000000));
+    assertEquals("one hundred twenty two billion nine hundred ninety nine", numbersToWordsTest.numbersToWords(122000000999));
   }
 
 }
