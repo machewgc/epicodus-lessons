@@ -20,4 +20,11 @@ public class NumbersToWordsTest {
     NumbersToWords numbersToWordsTest = new NumbersToWords();
     assertEquals("ninety one", numbersToWordsTest.numbersToWords(91));
   }
+
+  @Test
+  public void numbersToWords_NumbersDivisiblyBy100_NumberOfHundreds() {
+    NumbersToWords numbersToWordsTest = new NumbersToWords();
+    assertEquals("one hundred", numbersToWordsTest.numbersToWords(100));
+  }
+
 }
