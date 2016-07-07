@@ -22,9 +22,15 @@ public class NumbersToWordsTest {
   }
 
   @Test
-  public void numbersToWords_NumbersDivisiblyBy100_NumberOfHundreds() {
+  public void numbersToWords_NumbersOver100_NumberOfHundreds() {
     NumbersToWords numbersToWordsTest = new NumbersToWords();
-    assertEquals("one hundred twenty one", numbersToWordsTest.numbersToWords(121));
+    assertEquals("nine hundred ninety nine", numbersToWordsTest.numbersToWords(999));
+  }
+
+  @Test
+  public void numbersToWords_NumbersOver1000_NumberOfThousands() {
+    NumbersToWords numbersToWordsTest = new NumbersToWords();
+    assertEquals("fourteen thousand nine hundred ninety nine", numbersToWordsTest.numbersToWords(14999));
   }
 
 }
