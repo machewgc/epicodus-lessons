@@ -51,8 +51,16 @@ public class NumbersToWords {
       hundreds.put(900, "nine hundred");
 
 
+
+    if (count >= 1000) {
+      numberInWords = underTwenty.get((count - count % 1000) / 1000) + " thousand";
+      count = numberInput % 1000;
+      if (count > 0) {
+        numberInWords = numberInWords + " ";
+      }
+    }
     if (count >= 100) {
-      numberInWords = hundreds.get(count - count % 100);
+      numberInWords = numberInWords + hundreds.get(count - count % 100);
       count = numberInput % 100;
       if (count > 0) {
         numberInWords = numberInWords + " ";
