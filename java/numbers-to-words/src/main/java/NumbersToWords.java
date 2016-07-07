@@ -6,6 +6,7 @@ public class NumbersToWords {
   }
   public static String numbersToWords(Integer numberInput) {
     String numberInWords = new String();
+    Integer count = numberInput;
 
     HashMap<Integer,String> underTwenty = new HashMap();
       underTwenty.put(1,"one");
@@ -38,10 +39,15 @@ public class NumbersToWords {
       tenMultiplesOverTen.put(80, "eighty");
       tenMultiplesOverTen.put(90, "ninety");
 
-    if (numberInput % 10 == 0 && numberInput > 10) {
-      numberInWords = tenMultiplesOverTen.get(numberInput);
-    } else {
-      numberInWords = underTwenty.get(numberInput);
+    if (numberInput > 19) {
+      count = numberInput % 10;
+      numberInWords = tenMultiplesOverTen.get(numberInput - count);
+      if (count > 0) {
+        numberInWords = numberInWords + " ";
+      }
+    }
+    if (count > 0) {
+      numberInWords = numberInWords + underTwenty.get(count);
     }
 
     return numberInWords;
