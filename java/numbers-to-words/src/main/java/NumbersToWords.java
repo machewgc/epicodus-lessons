@@ -4,9 +4,9 @@ public class NumbersToWords {
   public static void main(String[] args) {
 
   }
-  public static String numbersToWords(int numberInput) {
+  public static String numbersToWords(Long numberInput) {
     String numberInWords = new String();
-    int count = numberInput;
+    Long count = numberInput;
 
     if (count >= 1000000000) {
       numberInWords = oneToNineNineNine((count - count % 1000000000) / 1000000000) + " billion";
@@ -37,11 +37,11 @@ public class NumbersToWords {
 
     return numberInWords;
   }
-  public static String oneToNineNineNine(int numberInput) {
+  public static String oneToNineNineNine(Long numberInput) {
     String numberInWords = new String();
-    int count = numberInput;
+    Long count = numberInput;
 
-    HashMap<int,String> underTwenty = new HashMap();
+    HashMap<Long,String> underTwenty = new HashMap();
       underTwenty.put(1,"one");
       underTwenty.put(2,"two");
       underTwenty.put(3,"three");
@@ -62,7 +62,7 @@ public class NumbersToWords {
       underTwenty.put(18,"eighteen");
       underTwenty.put(19,"nineteen");
 
-    HashMap<int,String> tenMultiplesOverTen = new HashMap();
+    HashMap<Long,String> tenMultiplesOverTen = new HashMap();
       tenMultiplesOverTen.put(20, "twenty");
       tenMultiplesOverTen.put(30, "thirty");
       tenMultiplesOverTen.put(40, "fourty");
@@ -72,7 +72,7 @@ public class NumbersToWords {
       tenMultiplesOverTen.put(80, "eighty");
       tenMultiplesOverTen.put(90, "ninety");
 
-    HashMap<int,String> hundreds = new HashMap();
+    HashMap<Long,String> hundreds = new HashMap();
       hundreds.put(100, "one hundred");
       hundreds.put(200, "two hundred");
       hundreds.put(300, "three hundred");
