@@ -24,7 +24,7 @@ public class NumbersToWordsTest {
   @Test
   public void numbersToWords_NumbersDivisiblyBy100_NumberOfHundreds() {
     NumbersToWords numbersToWordsTest = new NumbersToWords();
-    assertEquals("one hundred", numbersToWordsTest.numbersToWords(100));
+    assertEquals("one hundred twenty one", numbersToWordsTest.numbersToWords(121));
   }
 
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NumbersToWordsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-07-07T02:43:23" hostname="Matthews-MBP-2.att.net" time="0.003">
+<testsuite name="NumbersToWordsTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-07-07T02:59:47" hostname="Matthews-MBP-2.att.net" time="0.006">
   <properties/>
   <testcase name="numbersToWords_NumbersOver20NotDivisibleBy10_TwoWordNumber" classname="NumbersToWordsTest" time="0.002"/>
   <testcase name="numbersToWords_NumberLessThan20_SingleCorrespondingWord" classname="NumbersToWordsTest" time="0.0"/>
+  <testcase name="numbersToWords_NumbersDivisiblyBy100_NumberOfHundreds" classname="NumbersToWordsTest" time="0.0"/>
   <testcase name="numbersToWords_Numbers20_30_40_50_60_70_80_90_SingleCorrespondingWord" classname="NumbersToWordsTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

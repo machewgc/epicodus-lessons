@@ -39,9 +39,28 @@ public class NumbersToWords {
       tenMultiplesOverTen.put(80, "eighty");
       tenMultiplesOverTen.put(90, "ninety");
 
+    HashMap<Integer,String> hundreds = new HashMap();
+      hundreds.put(100, "one hundred");
+      hundreds.put(200, "two hundred");
+      hundreds.put(300, "three hundred");
+      hundreds.put(400, "four hundred");
+      hundreds.put(500, "five hundred");
+      hundreds.put(600, "six hundred");
+      hundreds.put(700, "seven hundred");
+      hundreds.put(800, "eight hundred");
+      hundreds.put(900, "nine hundred");
+
+
+    if (count >= 100) {
+      numberInWords = hundreds.get(count - count % 100);
+      count = numberInput % 100;
+      if (count > 0) {
+        numberInWords = numberInWords + " ";
+      }
+    }
     if (numberInput > 19) {
+      numberInWords = numberInWords + tenMultiplesOverTen.get(count - count % 10);
       count = numberInput % 10;
-      numberInWords = tenMultiplesOverTen.get(numberInput - count);
       if (count > 0) {
         numberInWords = numberInWords + " ";
       }
