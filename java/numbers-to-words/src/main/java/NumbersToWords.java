@@ -8,6 +8,23 @@ public class NumbersToWords {
     String numberInWords = new String();
     Integer count = numberInput;
 
+    if (count >= 1000) {
+      numberInWords = oneToNineNineNine((count - count % 1000) / 1000) + " thousand";
+      count = numberInput % 1000;
+      if (count > 0) {
+        numberInWords = numberInWords + " ";
+      }
+    }
+    if (count > 0) {
+      numberInWords = numberInWords + oneToNineNineNine(count);
+    }
+
+    return numberInWords;
+  }
+  public static String oneToNineNineNine(Integer numberInput) {
+    String numberInWords = new String();
+    Integer count = numberInput;
+
     HashMap<Integer,String> underTwenty = new HashMap();
       underTwenty.put(1,"one");
       underTwenty.put(2,"two");
@@ -50,15 +67,6 @@ public class NumbersToWords {
       hundreds.put(800, "eight hundred");
       hundreds.put(900, "nine hundred");
 
-
-
-    if (count >= 1000) {
-      numberInWords = underTwenty.get((count - count % 1000) / 1000) + " thousand";
-      count = numberInput % 1000;
-      if (count > 0) {
-        numberInWords = numberInWords + " ";
-      }
-    }
     if (count >= 100) {
       numberInWords = numberInWords + hundreds.get(count - count % 100);
       count = numberInput % 100;
@@ -76,7 +84,6 @@ public class NumbersToWords {
     if (count > 0) {
       numberInWords = numberInWords + underTwenty.get(count);
     }
-
     return numberInWords;
   }
 }
