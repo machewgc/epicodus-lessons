@@ -8,8 +8,16 @@ public class NumbersToWords {
     String numberInWords = new String();
     Integer count = numberInput;
 
+    if (count >= 1000000) {
+      numberInWords = oneToNineNineNine((count - count % 1000000) / 1000000) + " million";
+      count = numberInput % 1000000;
+      if (count > 0) {
+        numberInWords = numberInWords + " ";
+      }
+    }
+
     if (count >= 1000) {
-      numberInWords = oneToNineNineNine((count - count % 1000) / 1000) + " thousand";
+      numberInWords = numberInWords + oneToNineNineNine((count - count % 1000) / 1000) + " thousand";
       count = numberInput % 1000;
       if (count > 0) {
         numberInWords = numberInWords + " ";

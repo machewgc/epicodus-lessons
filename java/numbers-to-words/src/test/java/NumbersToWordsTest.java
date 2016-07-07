@@ -42,7 +42,13 @@ public class NumbersToWordsTest {
   @Test
   public void numbersToWords_NumbersOver1000000_NumberOfMillions() {
     NumbersToWords numbersToWordsTest = new NumbersToWords();
-    assertEquals("nine hundre ninety eight million nine hundred ninety nine thousand nine hundred ninety nine", numbersToWordsTest.numbersToWords(998999999));
+    assertEquals("nine hundred ninety eight million twenty five thousand nine hundred ninety nine", numbersToWordsTest.numbersToWords(998025999));
+  }
+
+  @Test
+  public void numbersToWords_NumbersOver1000000000_NumberOfBillions() {
+    NumbersToWords numbersToWordsTest = new NumbersToWords();
+    assertEquals("one billion", numbersToWordsTest.numbersToWords(1000000000));
   }
 
 }
