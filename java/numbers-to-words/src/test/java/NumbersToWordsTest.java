@@ -14,4 +14,10 @@ public class NumbersToWordsTest {
     NumbersToWords numbersToWordsTest = new NumbersToWords();
     assertEquals("thirty", numbersToWordsTest.numbersToWords(30));
   }
+
+  @Test
+  public void numbersToWords_NumbersOver20NotDivisibleBy10_TwoWordNumber() {
+    NumbersToWords numbersToWordsTest = new NumbersToWords();
+    assertEquals("ninety one", numbersToWordsTest.numbersToWords(91));
+  }
 }

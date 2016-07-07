@@ -28,18 +28,18 @@ public class NumbersToWords {
       underTwenty.put(18,"eighteen");
       underTwenty.put(19,"nineteen");
 
-    HashMap<Integer,String> tenMultiplesOverTwenty = new HashMap();
-      tenMultiplesOverTwenty.put(20, "twenty");
-      tenMultiplesOverTwenty.put(30, "thirty");
-      tenMultiplesOverTwenty.put(40, "fourty");
-      tenMultiplesOverTwenty.put(50, "fifty");
-      tenMultiplesOverTwenty.put(60, "sixty");
-      tenMultiplesOverTwenty.put(70, "seventy");
-      tenMultiplesOverTwenty.put(80, "eighty");
-      tenMultiplesOverTwenty.put(90, "ninety");
+    HashMap<Integer,String> tenMultiplesOverTen = new HashMap();
+      tenMultiplesOverTen.put(20, "twenty");
+      tenMultiplesOverTen.put(30, "thirty");
+      tenMultiplesOverTen.put(40, "fourty");
+      tenMultiplesOverTen.put(50, "fifty");
+      tenMultiplesOverTen.put(60, "sixty");
+      tenMultiplesOverTen.put(70, "seventy");
+      tenMultiplesOverTen.put(80, "eighty");
+      tenMultiplesOverTen.put(90, "ninety");
 
     if (numberInput % 10 == 0 && numberInput > 10) {
-      numberInWords = tenMultiplesOverTwenty.get(numberInput);
+      numberInWords = tenMultiplesOverTen.get(numberInput);
     } else {
       numberInWords = underTwenty.get(numberInput);
     }
