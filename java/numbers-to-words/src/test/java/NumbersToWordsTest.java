@@ -34,9 +34,15 @@ public class NumbersToWordsTest {
   }
 
   @Test
-  public void numbersToWords_NumbersOver20000_NumberOfTenThousands() {
+  public void numbersToWords_NumbersOver20000_NumbersUpTo999Thousand999() {
     NumbersToWords numbersToWordsTest = new NumbersToWords();
     assertEquals("twenty five thousand nine hundred ninety nine", numbersToWordsTest.numbersToWords(25999));
+  }
+
+  @Test
+  public void numbersToWords_NumbersOver1000000_NumberOfMillions() {
+    NumbersToWords numbersToWordsTest = new NumbersToWords();
+    assertEquals("nine hundre ninety eight million nine hundred ninety nine thousand nine hundred ninety nine", numbersToWordsTest.numbersToWords(998999999));
   }
 
 }
