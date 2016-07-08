@@ -33,9 +33,9 @@ Numbers Over 1 Million
   Output: "nine hundred ninety eight million twenty five thousand nine hundred ninety nine"
 
 Numbers Over 1 Billion  
-  Input: 122000000999L;
+  Input: 122000000999L
   Output: "one hundred twenty two billion nine hundred ninety nine"
 
 Numbers Over 1 Trillion
-  Input: 432122000000999L;  
+  Input: 432122000000999L  
   Output: "four hundred thirty two trillion one hundred twenty two billion nine hundred ninety nine"
