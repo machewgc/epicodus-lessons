@@ -59,4 +59,11 @@ public class NumbersToWordsTest {
     assertEquals("one hundred twenty two billion nine hundred ninety nine", numbersToWordsTest.numbersToWords(testNumber));
   }
 
+  @Test
+  public void numbersToWords_NumbersOver1000000000000_NumberOfTrillions() {
+    NumbersToWords numbersToWordsTest = new NumbersToWords();
+    long testNumber = 432122000000999L;
+    assertEquals("four hundred thirty two trillion one hundred twenty two billion nine hundred ninety nine", numbersToWordsTest.numbersToWords(testNumber));
+  }
+
 }

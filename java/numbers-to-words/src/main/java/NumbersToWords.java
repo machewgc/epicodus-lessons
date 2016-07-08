@@ -8,16 +8,24 @@ public class NumbersToWords {
   public static String numbersToWords(Long numberInput) {
     String numberInWords = new String();
     Long count = numberInput;
+    Long trillion = 1000000000000L;
 
+    if (count >= trillion) {
+      numberInWords = oneToNineNineNine((count - count % trillion) / trillion) + " trillion";
+      count = numberInput % trillion;
+      if (count > 0) {
+        numberInWords = numberInWords + " ";
+      }
+    }
     if (count >= 1000000000) {
-      numberInWords = oneToNineNineNine((count - count % 1000000000) / 1000000000) + " billion";
+      numberInWords = numberInWords + oneToNineNineNine((count - count % 1000000000) / 1000000000) + " billion";
       count = numberInput % 1000000000;
       if (count > 0) {
         numberInWords = numberInWords + " ";
       }
     }
     if (count >= 1000000) {
-      numberInWords = oneToNineNineNine((count - count % 1000000) / 1000000) + " million";
+      numberInWords = numberInWords + oneToNineNineNine((count - count % 1000000) / 1000000) + " million";
       count = numberInput % 1000000;
       if (count > 0) {
         numberInWords = numberInWords + " ";
