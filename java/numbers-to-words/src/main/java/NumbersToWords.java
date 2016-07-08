@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.lang.*;
 
 public class NumbersToWords {
   public static void main(String[] args) {
@@ -15,7 +16,6 @@ public class NumbersToWords {
         numberInWords = numberInWords + " ";
       }
     }
-
     if (count >= 1000000) {
       numberInWords = oneToNineNineNine((count - count % 1000000) / 1000000) + " million";
       count = numberInput % 1000000;
@@ -23,7 +23,6 @@ public class NumbersToWords {
         numberInWords = numberInWords + " ";
       }
     }
-
     if (count >= 1000) {
       numberInWords = numberInWords + oneToNineNineNine((count - count % 1000) / 1000) + " thousand";
       count = numberInput % 1000;
@@ -34,14 +33,15 @@ public class NumbersToWords {
     if (count > 0) {
       numberInWords = numberInWords + oneToNineNineNine(count);
     }
-
     return numberInWords;
   }
   public static String oneToNineNineNine(Long numberInput) {
     String numberInWords = new String();
     Long count = numberInput;
+    Integer key = 0;
+    Long temp = 0L;
 
-    HashMap<Long,String> underTwenty = new HashMap();
+    HashMap<Integer,String> underTwenty = new HashMap();
       underTwenty.put(1,"one");
       underTwenty.put(2,"two");
       underTwenty.put(3,"three");
@@ -62,7 +62,7 @@ public class NumbersToWords {
       underTwenty.put(18,"eighteen");
       underTwenty.put(19,"nineteen");
 
-    HashMap<Long,String> tenMultiplesOverTen = new HashMap();
+    HashMap<Integer,String> tenMultiplesOverTen = new HashMap();
       tenMultiplesOverTen.put(20, "twenty");
       tenMultiplesOverTen.put(30, "thirty");
       tenMultiplesOverTen.put(40, "fourty");
@@ -72,7 +72,7 @@ public class NumbersToWords {
       tenMultiplesOverTen.put(80, "eighty");
       tenMultiplesOverTen.put(90, "ninety");
 
-    HashMap<Long,String> hundreds = new HashMap();
+    HashMap<Integer,String> hundreds = new HashMap();
       hundreds.put(100, "one hundred");
       hundreds.put(200, "two hundred");
       hundreds.put(300, "three hundred");
@@ -84,21 +84,26 @@ public class NumbersToWords {
       hundreds.put(900, "nine hundred");
 
     if (count >= 100) {
-      numberInWords = numberInWords + hundreds.get(count - count % 100);
+      temp = count - count % 100;
+      key = temp.intValue();
+      numberInWords = numberInWords + hundreds.get(key);
       count = numberInput % 100;
       if (count > 0) {
         numberInWords = numberInWords + " ";
       }
     }
     if (numberInput > 19) {
-      numberInWords = numberInWords + tenMultiplesOverTen.get(count - count % 10);
+      temp = count - count % 10;
+      key = temp.intValue();
+      numberInWords = numberInWords + tenMultiplesOverTen.get(key);
       count = numberInput % 10;
       if (count > 0) {
         numberInWords = numberInWords + " ";
       }
     }
     if (count > 0) {
-      numberInWords = numberInWords + underTwenty.get(count);
+      key = count.intValue();
+      numberInWords = numberInWords + underTwenty.get(key);
     }
     return numberInWords;
   }
