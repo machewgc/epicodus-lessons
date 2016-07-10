@@ -36,6 +36,8 @@ public class RockPaperScissors {
         return false;
     } else if (choice1 == "scissors" && choice2 == "rock") {
         return false;
+    } else if (choice1 == "paper" && choice2 == "scissors") {
+        return false;
     } else {
       return true;
     }
