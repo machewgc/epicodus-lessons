@@ -30,6 +30,6 @@ public class RockPaperScissors {
   }
 
   public static Boolean doesFirstPlayerWin(String choice1, String choice2) {
-    return false;
+    return true;
   }
 }
