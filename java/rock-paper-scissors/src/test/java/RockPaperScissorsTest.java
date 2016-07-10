@@ -9,4 +9,10 @@ public class RockPaperScissorsTest {
     assertEquals(true, testRockPaperScissors.doesFirstPlayerWin("rock", "scissors"));
   }
 
+  @Test
+  public void doesFirstPlayerWin_scissorsBeatByRock_false() {
+    RockPaperScissors testRockPaperScissors = new RockPaperScissors();
+    assertEquals(false, testRockPaperScissors.doesFirstPlayerWin("scissors", "rock"));
+  }
+
 }
