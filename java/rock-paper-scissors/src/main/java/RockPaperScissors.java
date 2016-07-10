@@ -30,6 +30,11 @@ public class RockPaperScissors {
   }
 
   public static Boolean doesFirstPlayerWin(String choice1, String choice2) {
+    if (choice1 == "scissors") {
+      if (choice2 == "rock") {
+        return false;
+      }
+    }
     return true;
   }
 }
