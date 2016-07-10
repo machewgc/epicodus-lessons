@@ -12,7 +12,7 @@ public class RockPaperScissorsTest {
   @Test
   public void doesFirstPlayerWin_scissorsBeatByRock_false() {
     RockPaperScissors testRockPaperScissors = new RockPaperScissors();
-    assertEquals(false, testRockPaperScissors.doesFirstPlayerWin("scissors", "rock"));
+    assertEquals(false, testRockPaperScissors.doesFirstPlayerWin("rock", "paper"));
   }
 
 }
