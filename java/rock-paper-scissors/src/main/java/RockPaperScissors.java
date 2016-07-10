@@ -35,6 +35,11 @@ public class RockPaperScissors {
         return false;
       }
     }
+
+    if (choice1 == choice2) {
+      return null;
+    }
+    
     return true;
   }
 }
