@@ -27,7 +27,7 @@ public class AppTest extends FluentTest {
     choiceOne.selectByValue("rock");
     choiceTwo.selectByValue("scissors");
     submit(".btn");
-    assertThat(pageSource()).contains("Player 1 wins");
+    assertThat(pageSource()).contains("Player 1 wins with rock");
   }
 
   @Test
@@ -38,7 +38,7 @@ public class AppTest extends FluentTest {
     choiceOne.selectByValue("rock");
     choiceTwo.selectByValue("paper");
     submit(".btn");
-    assertThat(pageSource()).contains("Player 2 wins");
+    assertThat(pageSource()).contains("Player 2 wins with paper");
   }
 
   @Test
