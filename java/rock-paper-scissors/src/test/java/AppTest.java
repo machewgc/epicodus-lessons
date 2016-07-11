@@ -41,4 +41,15 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Player 2 wins");
   }
 
+  @Test
+  public void nobodyWins() {
+    goTo("http://localhost:4567");
+    Select choiceOne = new Select(webDriver.findElement(By.id("choiceOne")));
+    Select choiceTwo = new Select(webDriver.findElement(By.id("choiceTwo")));
+    choiceOne.selectByValue("paper");
+    choiceTwo.selectByValue("paper");
+    submit(".btn");
+    assertThat(pageSource()).contains("Both chose paper");
+  }
+
 }
