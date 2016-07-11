@@ -1,6 +1,8 @@
 <h1>Rock, Paper, Scissors</h1>
 #if($doesFirstPlayerWin)
-  <h3 class="well">Player 1 wins with $choice1</h3>
+  <h3 class="well">Player 1 wins with $choiceOne (Player 2 used $choiceTwo</h3>
+#elseif($isATie)
+    <h3 class="well">Nobody wins. Both chose $choiceTwo</h3>
 #else
-  <h3 class="well">Player 2 wins with $choice2</h3>
+    <h3 class="well">Player 2 wins with $choiceTwo</h3>
 #end

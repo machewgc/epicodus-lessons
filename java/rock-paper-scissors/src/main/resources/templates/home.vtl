@@ -3,15 +3,26 @@
 <p>Battle your friend in a game of rock, paper, scissors!</p>
 
 <form action='/battle' method='get'>
-  <div class="form-group">
-    <label for="choice1">Enter rock, paper, or scissors</label>
-    <input id="choice1" name="choice1" class="form-control" type="text">
-  </div>
 
-  <div class="form-group">
-    <label for="choice2">Enter rock, paper, or scissors</label>
-    <input id="choice2" name="choice2" class="form-control" type="text">
+  <!-- div class="form-group">
+    <label for="choiceOne">Enter rock, paper, or scissors</label>
+    <input id="choiceOne" name="choiceOne" class="form-control" type="text">
   </div>
+  <div class="form-group">
+    <label for="choiceTwo">Enter rock, paper, or scissors</label>
+    <input id="choiceTwo" name="choiceTwo" class="form-control" type="text">
+  </div -->
+
+  <select id="choiceOne" name="choiceOne" class="form-control">
+    <option value="rock">rock</option>
+    <option value="paper">paper</option>
+    <option value="scissors">scissors</option>
+  </select>
+  <select id="choiceTwo" name="choiceTwo" class="form-control">
+    <option value="rock">rock</option>
+    <option value="paper">paper</option>
+    <option value="scissors">scissors</option>
+  </select>
 
   <button type="submit" class="btn btn-info">Fight!</button>
 </form>

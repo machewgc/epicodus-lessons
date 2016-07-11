@@ -18,25 +18,32 @@ public class RockPaperScissors {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/battle.vtl");
 
-      String choice1 = request.queryParams("choice1");
-      String choice2 = request.queryParams("choice2");
-      Boolean doesFirstPlayerWin = doesFirstPlayerWin(choice1, choice2);
+      /*String choiceOne = "rock";
+      String choiceTwo = "rock";*/
+      String choiceOne = request.queryParams("choiceOne");
+      String choiceTwo = request.queryParams("choiceTwo");
+      Boolean doesFirstPlayerWin = doesFirstPlayerWin(choiceOne, choiceTwo);
 
+      if (doesFirstPlayerWin == null) {
+        model.put("isATie", true);
+      } else {
+        model.put("isATie", false);
+      }
       model.put("doesFirstPlayerWin", doesFirstPlayerWin);
-      model.put("choice1", request.queryParams("choice1"));
-      model.put("choice2", request.queryParams("choice2"));
+      model.put("choiceOne", choiceOne);
+      model.put("choiceTwo", choiceTwo);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
 
-  public static Boolean doesFirstPlayerWin(String choice1, String choice2) {
-    if (choice1 == choice2) {
-      return null;
-    } else if (choice1 == "rock" && choice2 == "paper") {
+  public static Boolean doesFirstPlayerWin(String choiceOne, String choiceTwo) {
+    if (choiceOne.equals(choiceTwo)) {
+      return null; //Needs to return Null here, changed for debugging
+    } else if (choiceOne.equals("rock") && choiceTwo.equals("paper")) {
         return false;
-    } else if (choice1 == "scissors" && choice2 == "rock") {
+    } else if (choiceOne.equals("scissors") && choiceTwo.equals("rock")) {
         return false;
-    } else if (choice1 == "paper" && choice2 == "scissors") {
+    } else if (choiceOne.equals("paper") && choiceTwo.equals("scissors")) {
         return false;
     } else {
       return true;
