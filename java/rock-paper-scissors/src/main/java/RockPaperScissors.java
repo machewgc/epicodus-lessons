@@ -18,14 +18,13 @@ public class RockPaperScissors {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/battle.vtl");
 
-      /*String choiceOne = "rock";
-      String choiceTwo = "rock";*/
       String choiceOne = request.queryParams("choiceOne");
       String choiceTwo = request.queryParams("choiceTwo");
       Boolean doesFirstPlayerWin = doesFirstPlayerWin(choiceOne, choiceTwo);
 
       if (doesFirstPlayerWin == null) {
         model.put("isATie", true);
+        doesFirstPlayerWin = false;
       } else {
         model.put("isATie", false);
       }
@@ -36,6 +35,7 @@ public class RockPaperScissors {
     }, new VelocityTemplateEngine());
   }
 
+  //This could be improved by returning two booleans. One for a player1 victory and one for a tie. This would avoid null
   public static Boolean doesFirstPlayerWin(String choiceOne, String choiceTwo) {
     if (choiceOne.equals(choiceTwo)) {
       return null; //Needs to return Null here, changed for debugging
