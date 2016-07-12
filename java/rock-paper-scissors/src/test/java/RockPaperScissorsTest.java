@@ -46,4 +46,10 @@ public class RockPaperScissorsTest {
     assertEquals(true, testOpponent.isHumanOpponent("human"));
   }
 
+  @Test
+  public void isHumanOpponent_computer_False() {
+    RockPaperScissors testOpponent = new RockPaperScissors();
+    assertEquals(false, testOpponent.isHumanOpponent("computer"));
+  }
+
 }
