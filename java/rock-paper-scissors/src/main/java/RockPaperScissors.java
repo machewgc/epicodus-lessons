@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Random;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
@@ -35,10 +36,25 @@ public class RockPaperScissors {
     }, new VelocityTemplateEngine());
   }
 
+  public static String computerChooses() {
+    Random myRandom = new Random();
+
+
+    String computerChoice = new String();
+    Map<Integer,String> computerChoices = new HashMap<Integer,String>();
+
+    computerChoices.put(0, "rock");
+    computerChoices.put(1, "paper");
+    computerChoices.put(2, "scissors");
+
+    computerChoice = computerChoices(myRandom.nextInt(3));
+
+  }
+
   //This could be improved by returning two booleans. One for a player1 victory and one for a tie. This would avoid null
   public static Boolean doesFirstPlayerWin(String choiceOne, String choiceTwo) {
     if (choiceOne.equals(choiceTwo)) {
-      return null; //Needs to return Null here, changed for debugging
+      return null;
     } else if (choiceOne.equals("rock") && choiceTwo.equals("paper")) {
         return false;
     } else if (choiceOne.equals("scissors") && choiceTwo.equals("rock")) {
