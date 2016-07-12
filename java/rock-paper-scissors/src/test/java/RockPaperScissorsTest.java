@@ -6,34 +6,34 @@ public class RockPaperScissorsTest {
   @Test
   public void doesFirstPlayerWin_rockBeatsScissors_true() {
     RockPaperScissors testRockPaperScissors = new RockPaperScissors();
-    assertEquals(true, testRockPaperScissors.doesFirstPlayerWin("rock", "scissors"));
+    assertEquals("win", testRockPaperScissors.doesFirstPlayerWin("rock", "scissors"));
   }
 
   @Test
   public void doesFirstPlayerWin_rockBeatByPaper_false() {
     RockPaperScissors testRockPaperScissors = new RockPaperScissors();
-    assertEquals(false, testRockPaperScissors.doesFirstPlayerWin("rock", "paper"));
+    assertEquals("lose", testRockPaperScissors.doesFirstPlayerWin("rock", "paper"));
   }
 
   @Test
   public void doesFirstPlayerWin_RockTiesWithRock_false() {
     RockPaperScissors testRockPaperScissors = new RockPaperScissors();
-    assertEquals(null, testRockPaperScissors.doesFirstPlayerWin("rock", "rock"));
+    assertEquals("tie", testRockPaperScissors.doesFirstPlayerWin("rock", "rock"));
   }
 
   @Test
   public void doesFirstPlayerWin_scissorsBeatByRock_false() {
     RockPaperScissors testRockPaperScissors = new RockPaperScissors();
-    assertEquals(false, testRockPaperScissors.doesFirstPlayerWin("scissors", "rock"));
+    assertEquals("lose", testRockPaperScissors.doesFirstPlayerWin("scissors", "rock"));
   }
 
   @Test
   public void doesFirstPlayerWin_paperBeatByScissors_false() {
     RockPaperScissors testRockPaperScissors = new RockPaperScissors();
-    assertEquals(false, testRockPaperScissors.doesFirstPlayerWin("paper", "scissors"));
+    assertEquals("lose", testRockPaperScissors.doesFirstPlayerWin("paper", "scissors"));
   }
 
-  @Test
+ @Test
   public void doesComputerChooseAString_IsAString_String() {
     RockPaperScissors testComputerChooses = new RockPaperScissors();
     String computerChoice = testComputerChooses.computerChooses();
@@ -50,6 +50,23 @@ public class RockPaperScissorsTest {
   public void isHumanOpponent_computer_False() {
     RockPaperScissors testOpponent = new RockPaperScissors();
     assertEquals(false, testOpponent.isHumanOpponent("computer"));
+  }
+
+  @Test
+  public void choiceTwo_humanOpponent_userInput() {
+    RockPaperScissors testChoiceTwo = new RockPaperScissors();
+    String choiceTwo = "rock";
+    Boolean humanOpponent = true;
+    assertEquals("rock", testChoiceTwo.choiceTwo(choiceTwo, humanOpponent));
+  }
+
+  @Test
+  public void choiceTwo_computerOpponent_computerInput() {
+    RockPaperScissors testChoiceTwo = new RockPaperScissors();
+    String choiceTwo = "rock";
+    Boolean humanOpponent = false;
+    String choiceTwoOutput = testChoiceTwo.choiceTwo(choiceTwo, humanOpponent);
+    assertEquals(true, choiceTwoOutput instanceof String);
   }
 
 }

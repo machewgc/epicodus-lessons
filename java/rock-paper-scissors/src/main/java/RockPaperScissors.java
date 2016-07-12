@@ -21,14 +21,17 @@ public class RockPaperScissors {
 
       String choiceOne = request.queryParams("choiceOne");
       String choiceTwo = request.queryParams("choiceTwo");
-      Boolean doesFirstPlayerWin = doesFirstPlayerWin(choiceOne, choiceTwo);
+      Boolean isHumanOpponent = true;
 
-      if (doesFirstPlayerWin == null) {
+      choiceTwo = choiceTwo(choiceTwo, isHumanOpponent);
+      String doesFirstPlayerWin = doesFirstPlayerWin(choiceOne, choiceTwo);
+
+/*      if (doesFirstPlayerWin == null) { //I need to remove this by making sure null values aren't returned
         model.put("isATie", true);
         doesFirstPlayerWin = false;
       } else {
         model.put("isATie", false);
-      }
+      }*/
       model.put("doesFirstPlayerWin", doesFirstPlayerWin);
       model.put("choiceOne", choiceOne);
       model.put("choiceTwo", choiceTwo);
@@ -36,8 +39,21 @@ public class RockPaperScissors {
     }, new VelocityTemplateEngine());
   }
 
+  public static String choiceTwo(String choiceTwo, Boolean isHumanOpponent) {
+    if (isHumanOpponent) {
+      return choiceTwo;
+    } else {
+      return computerChooses();
+    }
+
+  }
+
   public static Boolean isHumanOpponent(String opponent) {
-    return true;
+    if (opponent.equals("computer")) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   public static String computerChooses() {
@@ -55,18 +71,17 @@ public class RockPaperScissors {
     return computerChoice;
   }
 
-  //This could be improved by returning two booleans. One for a player1 victory and one for a tie. This would avoid null
-  public static Boolean doesFirstPlayerWin(String choiceOne, String choiceTwo) {
+  public static String doesFirstPlayerWin(String choiceOne, String choiceTwo) {
     if (choiceOne.equals(choiceTwo)) {
-      return null;
+      return "tie";
     } else if (choiceOne.equals("rock") && choiceTwo.equals("paper")) {
-        return false;
+        return "lose";
     } else if (choiceOne.equals("scissors") && choiceTwo.equals("rock")) {
-        return false;
+        return "lose";
     } else if (choiceOne.equals("paper") && choiceTwo.equals("scissors")) {
-        return false;
+        return "lose";
     } else {
-      return true;
+      return "win";
     }
   }
 }
