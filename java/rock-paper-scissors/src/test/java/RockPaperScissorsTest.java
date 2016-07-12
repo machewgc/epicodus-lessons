@@ -34,10 +34,10 @@ public class RockPaperScissorsTest {
   }
 
   @Test
-  public void doesFirstPlayerWin_paperBeatByScissors_false() {
+  public void doesComputerChooseAString_IsAString_String() {
     RockPaperScissors testComputerChooses = new RockPaperScissors();
     String computerChoice = testComputerChooses.computerChooses();
-    assertEquals(true, computerChoice instanceOf String);
+    assertEquals(true, computerChoice instanceof String);
   }
 
 }

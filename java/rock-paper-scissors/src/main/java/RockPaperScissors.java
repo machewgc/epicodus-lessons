@@ -36,9 +36,12 @@ public class RockPaperScissors {
     }, new VelocityTemplateEngine());
   }
 
+  public static Boolean isHumanOpponent(String opponent) {
+    
+  }
+
   public static String computerChooses() {
     Random myRandom = new Random();
-
 
     String computerChoice = new String();
     Map<Integer,String> computerChoices = new HashMap<Integer,String>();
@@ -47,8 +50,9 @@ public class RockPaperScissors {
     computerChoices.put(1, "paper");
     computerChoices.put(2, "scissors");
 
-    computerChoice = computerChoices(myRandom.nextInt(3));
+    computerChoice = computerChoices.get(myRandom.nextInt(3));
 
+    return computerChoice;
   }
 
   //This could be improved by returning two booleans. One for a player1 victory and one for a tie. This would avoid null
