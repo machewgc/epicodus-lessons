@@ -37,7 +37,7 @@ public class RockPaperScissors {
   }
 
   public static Boolean isHumanOpponent(String opponent) {
-    return false;
+    return true;
   }
 
   public static String computerChooses() {
