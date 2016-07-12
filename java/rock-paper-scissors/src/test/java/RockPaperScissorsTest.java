@@ -40,4 +40,10 @@ public class RockPaperScissorsTest {
     assertEquals(true, computerChoice instanceof String);
   }
 
+  @Test
+  public void isHumanOpponent_human_True() {
+    RockPaperScissors testOpponent = new RockPaperScissors();
+    assertEquals(true, testOpponent.isHumanOpponent("human"));
+  }
+
 }
