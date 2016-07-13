@@ -21,7 +21,6 @@ public class RockPaperScissors {
 
       String choiceOne = request.queryParams("choiceOne");
       String choiceTwo = request.queryParams("choiceTwo");
-
       String opponent = request.queryParams("opponent");
 
       choiceTwo = choiceTwo(choiceTwo, opponent);

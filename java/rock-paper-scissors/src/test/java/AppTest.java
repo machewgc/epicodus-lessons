@@ -19,18 +19,20 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  /*@Test
-  public void playerOneWins() {
+  @Test
+  public void playerOneWinsAgainstHuman() {
     goTo("http://localhost:4567");
     Select choiceOne = new Select(webDriver.findElement(By.id("choiceOne")));
     Select choiceTwo = new Select(webDriver.findElement(By.id("choiceTwo")));
+    Select opponent = new Select(webDriver.findElement(By.id("opponent")));
     choiceOne.selectByValue("rock");
     choiceTwo.selectByValue("scissors");
+    opponent.selectByValue("human");
     submit(".btn");
     assertThat(pageSource()).contains("Player 1 wins with rock");
   }
 
-  @Test
+  /*@Test
   public void playerTwoWins() {
     goTo("http://localhost:4567");
     Select choiceOne = new Select(webDriver.findElement(By.id("choiceOne")));
