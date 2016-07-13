@@ -41,31 +41,19 @@ public class RockPaperScissorsTest {
   }
 
   @Test
-  public void isHumanOpponent_human_True() {
-    RockPaperScissors testOpponent = new RockPaperScissors();
-    assertEquals(true, testOpponent.isHumanOpponent("human"));
-  }
-
-  @Test
-  public void isHumanOpponent_computer_False() {
-    RockPaperScissors testOpponent = new RockPaperScissors();
-    assertEquals(false, testOpponent.isHumanOpponent("computer"));
-  }
-
-  @Test
   public void choiceTwo_humanOpponent_userInput() {
     RockPaperScissors testChoiceTwo = new RockPaperScissors();
     String choiceTwo = "rock";
-    Boolean humanOpponent = true;
-    assertEquals("rock", testChoiceTwo.choiceTwo(choiceTwo, humanOpponent));
+    String opponent = "human";
+    assertEquals("rock", testChoiceTwo.choiceTwo(choiceTwo, opponent));
   }
 
   @Test
   public void choiceTwo_computerOpponent_computerInput() {
     RockPaperScissors testChoiceTwo = new RockPaperScissors();
     String choiceTwo = "rock";
-    Boolean humanOpponent = false;
-    String choiceTwoOutput = testChoiceTwo.choiceTwo(choiceTwo, humanOpponent);
+    String opponent = "computer";
+    String choiceTwoOutput = testChoiceTwo.choiceTwo(choiceTwo, opponent);
     assertEquals(true, choiceTwoOutput instanceof String);
   }
 

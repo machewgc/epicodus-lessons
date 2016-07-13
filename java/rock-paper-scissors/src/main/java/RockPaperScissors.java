@@ -21,17 +21,12 @@ public class RockPaperScissors {
 
       String choiceOne = request.queryParams("choiceOne");
       String choiceTwo = request.queryParams("choiceTwo");
-      Boolean isHumanOpponent = true;
 
-      choiceTwo = choiceTwo(choiceTwo, isHumanOpponent);
+      String opponent = request.queryParams("opponent");
+
+      choiceTwo = choiceTwo(choiceTwo, opponent);
       String doesFirstPlayerWin = doesFirstPlayerWin(choiceOne, choiceTwo);
 
-/*      if (doesFirstPlayerWin == null) { //I need to remove this by making sure null values aren't returned
-        model.put("isATie", true);
-        doesFirstPlayerWin = false;
-      } else {
-        model.put("isATie", false);
-      }*/
       model.put("doesFirstPlayerWin", doesFirstPlayerWin);
       model.put("choiceOne", choiceOne);
       model.put("choiceTwo", choiceTwo);
@@ -39,20 +34,11 @@ public class RockPaperScissors {
     }, new VelocityTemplateEngine());
   }
 
-  public static String choiceTwo(String choiceTwo, Boolean isHumanOpponent) {
-    if (isHumanOpponent) {
+  public static String choiceTwo(String choiceTwo, String opponent) {
+    if (opponent.equals("human")) {
       return choiceTwo;
     } else {
       return computerChooses();
-    }
-
-  }
-
-  public static Boolean isHumanOpponent(String opponent) {
-    if (opponent.equals("computer")) {
-      return false;
-    } else {
-      return true;
     }
   }
 
