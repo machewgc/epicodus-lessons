@@ -19,6 +19,13 @@ public class MakeChange {
     Integer keyCount = 0;
     HashMap<String,Integer> coinsAndAmounts = new HashMap<String,Integer>();
 
+    if (remainingCount > 20) {
+      coinsAndAmounts.put("dimes",2);
+      remainingCount = remainingCount - 20;
+    } else if (remainingCount > 10) {
+      coinsAndAmounts.put("dime",1);
+      remainingCount = remainingCount - 20;
+    }
 
     if (remainingCount > 5) {
       coinsAndAmounts.put("nickel",1);
