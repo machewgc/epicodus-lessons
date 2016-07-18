@@ -3,6 +3,8 @@ import static spark.Spark.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.lang.Number;
+import java.util.HashMap;
+import java.io.*;
 
 public class MakeChange {
   public static void main(String[] args) {
@@ -14,19 +16,27 @@ public class MakeChange {
     BigDecimal count = amount.divide(cent,0,BigDecimal.ROUND_HALF_UP);
     String coinCount = new String();
     Integer remainingCount = count.intValue();
+    Integer keyCount = 0;
+    HashMap<String,Integer> coinsAndAmounts = new HashMap<String,Integer>();
+
 
     if (remainingCount > 5) {
-      coinCount = String.format("%d nickel", 1);
+      coinsAndAmounts.put("nickel",1);
       remainingCount = remainingCount - 5;
-      if (remainingCount > 0) {
-        coinCount = coinCount + ", ";
-      }
     }
 
     if (remainingCount > 1) {
-      coinCount = coinCount + String.format("%d pennies", remainingCount);
-    } else {
-      coinCount = coinCount + String.format("%d penny", remainingCount);
+      coinsAndAmounts.put("pennies", remainingCount);
+    } else if (remainingCount == 1) {
+      coinsAndAmounts.put("penny", 1);
+    }
+
+    for (String key : coinsAndAmounts.keySet()) {
+      keyCount ++;
+      coinCount = coinCount + coinsAndAmounts.get(key) + " " + key;
+      if (coinsAndAmounts.size() > keyCount) {
+        coinCount = coinCount + ", ";
+      }
     }
 
     return coinCount;
