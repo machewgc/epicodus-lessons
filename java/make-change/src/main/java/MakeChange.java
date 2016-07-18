@@ -20,23 +20,23 @@ public class MakeChange {
     Integer keyCount = 0;
     LinkedHashMap<String,Integer> coinsAndAmounts = new LinkedHashMap<String,Integer>();
 
-    /*if (remainingCount > 20) {
+    if (remainingCount >= 50) {
       coinsAndAmounts.put("quarters",Math.round(remainingCount/25));
-      remainingCount -= 20;
-    } else*/ if (remainingCount > 25) {
+      remainingCount = remainingCount - Math.round(remainingCount/25) * 25;
+    } else if (remainingCount >= 25) {
       coinsAndAmounts.put("quarter",1);
       remainingCount -= 25;
     }
 
-    if (remainingCount > 20) {
+    if (remainingCount >= 20) {
       coinsAndAmounts.put("dimes",2);
       remainingCount -= 20;
-    } else if (remainingCount > 10) {
+    } else if (remainingCount >= 10) {
       coinsAndAmounts.put("dime",1);
       remainingCount -= 10;
     }
 
-    if (remainingCount > 5) {
+    if (remainingCount >= 5) {
       coinsAndAmounts.put("nickel",1);
       remainingCount -= 5;
     }
