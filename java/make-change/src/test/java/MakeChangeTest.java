@@ -46,4 +46,11 @@ public class MakeChangeTest {
     assertEquals("1 quarter, 2 dimes, 4 pennies", testMakeChange.countCoins(change));
   }
 
+  @Test
+  public void countCoins_FiftyFiveCents_TwoQuartersOneNickel() {
+    MakeChange testMakeChange = new MakeChange();
+    BigDecimal change = new BigDecimal(0.55);
+    assertEquals("2 quarters, 1 nickel", testMakeChange.countCoins(change));
+  }
+
 }

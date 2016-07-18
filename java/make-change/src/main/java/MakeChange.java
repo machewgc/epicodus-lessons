@@ -5,6 +5,7 @@ import java.math.RoundingMode;
 import java.lang.Number;
 import java.util.LinkedHashMap;
 import java.io.*;
+import java.lang.Math;
 
 public class MakeChange {
   public static void main(String[] args) {
@@ -19,7 +20,10 @@ public class MakeChange {
     Integer keyCount = 0;
     LinkedHashMap<String,Integer> coinsAndAmounts = new LinkedHashMap<String,Integer>();
 
-    if (remainingCount > 25) {
+    /*if (remainingCount > 20) {
+      coinsAndAmounts.put("quarters",Math.round(remainingCount/25));
+      remainingCount -= 20;
+    } else*/ if (remainingCount > 25) {
       coinsAndAmounts.put("quarter",1);
       remainingCount -= 25;
     }
