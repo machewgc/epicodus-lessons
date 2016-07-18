@@ -19,6 +19,11 @@ public class MakeChange {
     Integer keyCount = 0;
     LinkedHashMap<String,Integer> coinsAndAmounts = new LinkedHashMap<String,Integer>();
 
+    if (remainingCount > 25) {
+      coinsAndAmounts.put("quarter",1);
+      remainingCount -= 25;
+    }
+
     if (remainingCount > 20) {
       coinsAndAmounts.put("dimes",2);
       remainingCount -= 20;

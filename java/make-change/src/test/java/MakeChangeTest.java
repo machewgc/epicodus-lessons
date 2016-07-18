@@ -33,10 +33,17 @@ public class MakeChangeTest {
   }
 
   @Test
-  public void countCoins_TwentyThreeCents_TowDimesThreePennies() {
+  public void countCoins_TwentyThreeCents_TwoDimesThreePennies() {
     MakeChange testMakeChange = new MakeChange();
     BigDecimal change = new BigDecimal(0.23);
     assertEquals("2 dimes, 3 pennies", testMakeChange.countCoins(change));
+  }
+
+  @Test
+  public void countCoins_FortyNineCents_OneQuarterTwoDimesFourPennies() {
+    MakeChange testMakeChange = new MakeChange();
+    BigDecimal change = new BigDecimal(0.49);
+    assertEquals("1 quarter, 2 dimes, 4 pennies", testMakeChange.countCoins(change));
   }
 
 }
