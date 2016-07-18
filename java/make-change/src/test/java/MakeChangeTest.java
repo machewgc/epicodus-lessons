@@ -26,6 +26,13 @@ public class MakeChangeTest {
   }
 
   @Test
+  public void countCoins_SixteenCents_OneDimeOneNickelOnePenny() {
+    MakeChange testMakeChange = new MakeChange();
+    BigDecimal change = new BigDecimal(0.16);
+    assertEquals("1 dime, 1 nickel, 1 penny", testMakeChange.countCoins(change));
+  }
+
+  @Test
   public void countCoins_TwentyThreeCents_TowDimesThreePennies() {
     MakeChange testMakeChange = new MakeChange();
     BigDecimal change = new BigDecimal(0.23);

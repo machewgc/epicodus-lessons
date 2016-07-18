@@ -3,7 +3,7 @@ import static spark.Spark.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.lang.Number;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.io.*;
 
 public class MakeChange {
@@ -17,19 +17,19 @@ public class MakeChange {
     String coinCount = new String();
     Integer remainingCount = count.intValue();
     Integer keyCount = 0;
-    HashMap<String,Integer> coinsAndAmounts = new HashMap<String,Integer>();
+    LinkedHashMap<String,Integer> coinsAndAmounts = new LinkedHashMap<String,Integer>();
 
     if (remainingCount > 20) {
       coinsAndAmounts.put("dimes",2);
-      remainingCount = remainingCount - 20;
+      remainingCount -= 20;
     } else if (remainingCount > 10) {
       coinsAndAmounts.put("dime",1);
-      remainingCount = remainingCount - 20;
+      remainingCount -= 10;
     }
 
     if (remainingCount > 5) {
       coinsAndAmounts.put("nickel",1);
-      remainingCount = remainingCount - 5;
+      remainingCount -= 5;
     }
 
     if (remainingCount > 1) {
