@@ -18,4 +18,11 @@ public class MakeChangeTest {
     assertEquals("3 pennies", testMakeChange.countCoins(change));
   }
 
+  @Test
+  public void countCoins_EightCents_OneNickelThreePennies() {
+    MakeChange testMakeChange = new MakeChange();
+    BigDecimal change = new BigDecimal(0.08);
+    assertEquals("1 nickel, 3 pennies", testMakeChange.countCoins(change));
+  }
+
 }
