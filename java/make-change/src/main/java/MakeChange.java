@@ -3,12 +3,39 @@ import static spark.Spark.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.lang.Number;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.io.*;
 import java.lang.Math;
+import spark.ModelAndView;
+import java.text.DecimalFormat;
 
 public class MakeChange {
   public static void main(String[] args) {
+    String layout = "templates/layout.vtl";
+
+    get("/", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/home.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/change", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/change.vtl");
+
+      DecimalFormat format = new DecimalFormat();
+      format.setParseBigDecimal(true);
+      String decimalString = request.queryParams("decimalNumber");
+      BigDecimal decimalNumber = new BigDecimal(decimalString);
+
+      String coins = "hi";
+
+      model.put("coins", coins);
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
   }
 
