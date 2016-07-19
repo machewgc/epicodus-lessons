@@ -30,7 +30,7 @@ public class MakeChange {
       String decimalString = request.queryParams("decimalNumber");
       BigDecimal decimalNumber = new BigDecimal(decimalString);
 
-      String coins = "hi";
+      String coins = countCoins(decimalNumber);
 
       model.put("coins", coins);
 
