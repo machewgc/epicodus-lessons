@@ -15,10 +15,20 @@ public class WordPuzzle {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/puzzle", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/puzzle.vtl");
+
+      String wordOrPhrase = request.queryParams("wordOrPhrase");
+
+      model.put("puzzle",wordOrPhrase);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
   }
 
   public static String wordPuzzle(String wordOrPhrase) {
-      return wordOrPhrase;
+      String puzzle = wordOrPhrase.replaceAll("[aeiouAEIOU]","-");
+      return puzzle;
   }
 }

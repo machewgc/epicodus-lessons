@@ -4,10 +4,15 @@ import static org.junit.Assert.*;
 public class WordPuzzleTest {
 
   @Test
-  public void choiceTwo_computerOpponent_computerInput() {
+  public void wordPuzzle_computer_cmptr() {
     WordPuzzle testPuzzle = new WordPuzzle();
-    String puzzle = "computer";
     assertEquals("c-mp-t-r", testPuzzle.wordPuzzle("computer"));
+  }
+
+  @Test
+  public void wordPuzzle_lestermeowslikeakitten_lstrmwslikkttn() {
+    WordPuzzle testPuzzle = new WordPuzzle();
+    assertEquals("L-ST-R m--ws l-k- - k-tt-n", testPuzzle.wordPuzzle("LESTER meows like a kitten"));
   }
 
 }
