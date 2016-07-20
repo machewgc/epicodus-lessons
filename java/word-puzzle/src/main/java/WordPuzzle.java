@@ -20,8 +20,9 @@ public class WordPuzzle {
       model.put("template", "templates/puzzle.vtl");
 
       String wordOrPhrase = request.queryParams("wordOrPhrase");
+      String puzzle = wordPuzzle(wordOrPhrase);
 
-      model.put("puzzle",wordOrPhrase);
+      model.put("puzzle",puzzle);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -30,5 +31,9 @@ public class WordPuzzle {
   public static String wordPuzzle(String wordOrPhrase) {
       String puzzle = wordOrPhrase.replaceAll("[aeiouAEIOU]","-");
       return puzzle;
+  }
+
+  public static Boolean isCorrect(String guess, String answer) {
+    return false;
   }
 }

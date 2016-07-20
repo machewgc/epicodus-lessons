@@ -15,4 +15,10 @@ public class WordPuzzleTest {
     assertEquals("L-ST-R m--ws l-k- - k-tt-n", testPuzzle.wordPuzzle("LESTER meows like a kitten"));
   }
 
+  @Test
+  public void isCorrect_correctGuess_true() {
+    WordPuzzle testIsCorrect = new WordPuzzle();
+    assertEquals(true, testIsCorrect.isCorrect("hello self","h-ll- s-lf"));
+  }
+
 }
