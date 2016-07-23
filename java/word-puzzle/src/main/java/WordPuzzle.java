@@ -19,13 +19,26 @@ public class WordPuzzle {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/puzzle.vtl");
 
-      String wordOrPhrase = request.queryParams("wordOrPhrase");
-      String puzzle = wordPuzzle(wordOrPhrase);
+      String answer = request.queryParams("wordOrPhrase");
+      String puzzle = wordPuzzle(answer);
 
+      model.put("answer",answer);
       model.put("puzzle",puzzle);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/answer", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/answer.vtl");
+
+      String guess = request.queryParams("guess");
+      String answer = request.queryParams("answer");
+      Boolean correct = isCorrect(guess, answer);
+
+      model.put("answer",answer);
+      model.put("correct",correct);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 
   public static String wordPuzzle(String wordOrPhrase) {
@@ -34,6 +47,10 @@ public class WordPuzzle {
   }
 
   public static Boolean isCorrect(String guess, String answer) {
-    return false;
+    if (guess.equals(answer)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

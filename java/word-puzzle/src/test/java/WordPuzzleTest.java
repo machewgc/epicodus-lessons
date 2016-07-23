@@ -18,7 +18,13 @@ public class WordPuzzleTest {
   @Test
   public void isCorrect_correctGuess_true() {
     WordPuzzle testIsCorrect = new WordPuzzle();
-    assertEquals(true, testIsCorrect.isCorrect("hello self","h-ll- s-lf"));
+    assertEquals(true, testIsCorrect.isCorrect("c-c-mb-r S-CKS","c-c-mb-r S-CKS"));
+  }
+
+  @Test
+  public void isCorrect_wrongGuess_false() {
+    WordPuzzle testIsCorrect = new WordPuzzle();
+    assertEquals(false, testIsCorrect.isCorrect("c-c-mb-rS-CKS","c-c-mb-r S-CKS"));
   }
 
 }
