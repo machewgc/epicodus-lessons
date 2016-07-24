@@ -56,6 +56,7 @@ public class RockPaperScissors {
     return computerChoice;
   }
 
+  // cbernal: turn this into a switch/case
   public static String doesFirstPlayerWin(String choiceOne, String choiceTwo) {
     if (choiceOne.equals(choiceTwo)) {
       return "tie";
